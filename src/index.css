@@ -1,0 +1,33 @@
+@import "tailwindcss";
+@plugin "daisyui";
+@font-face {
+    font-family: "yekan-bold";
+    src: url("./assets/fonts/iranyekanwebbold.e298fdc6.e298fdc6.woff");
+}
+@font-face {
+    font-family: "yekan-medium";
+    src: url("./assets/fonts/iranyekanwebmedium.2d4f96e5.2d4f96e5.woff");
+}
+@font-face {
+    font-family: "yekan-regular";
+    src: url("./assets/fonts/iranyekanwebregular.b95439c1.b95439c1.woff");
+}
+@font-face {
+    font-family: "shabnam";
+    src: url("./assets/fonts/Shabnam-FD.woff2");
+}
+@theme{
+    --font-yekan-bold:"yekan-bold";
+    --font-yekan-medium: "yekan-medium";
+    --font-yekan-regular:"yekan-regular";
+    --font-shabnam:"shabnam";
+    --breakpoint-xs:430px;
+}
+.hide-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
