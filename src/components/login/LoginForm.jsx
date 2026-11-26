@@ -5,6 +5,7 @@ import {Link, useNavigate} from 'react-router'
 import {useDispatch, useSelector} from "react-redux";
 import {fetchLogin,resetLogin} from "../../redux/login/loginSlice.js";
 import toast, { Toaster } from 'react-hot-toast';
+import FloatingInput from "./FloatingInput.jsx";
 const LoginForm = ({setLogin,from}) => {
     const [userInfo,setUserIno]=useState({
         phone:"",
@@ -51,14 +52,19 @@ const LoginForm = ({setLogin,from}) => {
                 <div className="login-form-bottom px-4 mt-10 flex flex-col gap-y-5">
                     <h2 className="font-yekan-bold text-[14px] xs:text-[16px]">ورود یا ثبت ‌نام در دیجی‌کالا</h2>
                     <h2 className="text-[12px] text-black/60">لطفا شماره موبایل یا ایمیل خود را وارد کنید</h2>
-                    <label className="floating-label">
-                        <input onChange={(e)=>setUserIno({...userInfo,phone: e.target.value})} value={userInfo.phone} type="text" className="text-[16px] outline-0 w-full rounded-lg input md:input-md lg:input-lg xl:input-xl" />
-                        <span className="text-right right-3 text-[12px] xs:text-[16px]">شماره موبایل یا پست الکترونیک</span>
-                    </label>
-                    <label className="floating-label">
-                        <input onChange={(e)=>setUserIno({...userInfo,password: e.target.value})} value={userInfo.password} type="password" className="text-[16px] outline-0 w-full rounded-lg input md:input-md lg:input-lg xl:input-xl" />
-                        <span className="text-[12px] xs:text-[16px]">رمز عبور</span>
-                    </label>
+                    <FloatingInput
+                        id="phone"
+                        label="شماره موبایل یا پست الکترونیک"
+                        value={userInfo.phone}
+                        onChange={(e) => setUserIno({ ...userInfo, phone: e.target.value })}
+                    />
+                    <FloatingInput
+                        id="password"
+                        label="رمز عبور"
+                        type="password"
+                        value={userInfo.password}
+                        onChange={(e) => setUserIno({ ...userInfo, password: e.target.value })}
+                    />
                     <button type="submit" className="px-4 py-3 rounded-md bg-[#EE4056] text-white">ورود به دیجی کالا</button>
                     <h2 className="text-[10px] text-black/50">ورود شما به معنای پذیرش شرایط دیجی‌کالا و قوانین حریم‌خصوصی است</h2>
                     <h2 onClick={()=>setLogin(false)} className="cursor-pointer text-[10px] text-[#EE4056] font-yekan-bold text-center -mt-2">ثبت نام در دیجی کالا</h2>
