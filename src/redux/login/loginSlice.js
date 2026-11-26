@@ -5,7 +5,7 @@ export const fetchLogin = createAsyncThunk(
     "login/fetchLogin",
     async (userInfo, thunkAPI) => {
         try {
-            const response = await axios.get('http://localhost:3000/users')
+            const response = await axios.get('https://final-digi.onrender.com/users')
             const findUser = response.data.find(item => {
                 return item.phone === userInfo.phone && item.password === userInfo.password
             })

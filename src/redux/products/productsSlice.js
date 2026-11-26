@@ -5,7 +5,7 @@ export const fetchProducts = createAsyncThunk(
     "products/fetchProducts",
     async (arg, thunkAPI) => {
         try {
-            const response = await axios.get('http://localhost:3000/products')
+            const response = await axios.get('https://final-digi.onrender.com/products')
             return response.data
         } catch (error) {
             return thunkAPI.rejectWithValue({

@@ -5,7 +5,7 @@ export const fetchMegaMenu = createAsyncThunk(
     "megaMenu/fetchMegaMenu",
     async (arg, thunkAPI) => {
         try {
-            const response = await axios.get('http://localhost:3000/megaMenus')
+            const response = await axios.get('https://final-digi.onrender.com/megaMenus')
             return response.data
         } catch (error) {
             return thunkAPI.rejectWithValue({

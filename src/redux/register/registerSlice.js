@@ -5,7 +5,7 @@ export const fetchRegister = createAsyncThunk(
     "register/fetchRegister",
     async (newUser, thunkAPI) => {
         try {
-            const response = await axios.get('http://localhost:3000/users')
+            const response = await axios.get('https://final-digi.onrender.com/users')
             const findUser = response.data.find(item => {
                 return item.phone === newUser.phone
             })
@@ -15,7 +15,7 @@ export const fetchRegister = createAsyncThunk(
                     message: "شما قبلا در سایت ثبت نام کرده اید"
                 })
             }
-            const res = await axios.post('http://localhost:3000/users', {
+            const res = await axios.post('https://final-digi.onrender.com/users', {
                 firstName: newUser.firstName,
                 lastName:newUser.lastName,
                 phone: newUser.phone,

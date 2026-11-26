@@ -5,7 +5,7 @@ export const fetchBanners = createAsyncThunk(
     "banners/fetchBanners",
     async (arg, thunkAPI) => {
         try {
-            const response = await axios.get('http://localhost:3000/banners')
+            const response = await axios.get('https://final-digi.onrender.com/banners')
             return response.data
         } catch (error) {
             return thunkAPI.rejectWithValue({

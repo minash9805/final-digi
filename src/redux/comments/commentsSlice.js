@@ -5,7 +5,7 @@ export const fetchComments = createAsyncThunk(
     "comments/fetchComments",
     async (arg, thunkAPI) => {
         try {
-            const response = await axios.get('http://localhost:3000/comments')
+            const response = await axios.get('https://final-digi.onrender.com/comments')
             return response.data
         } catch (error) {
             return thunkAPI.rejectWithValue({
